@@ -1,0 +1,44 @@
+[
+    {
+        "image": "../cardpic/buger.png",
+        "name": "burger"
+
+    },
+    {
+        "image": "../cardpic/fox.png",
+        "name": "fox"
+
+    },
+    {
+        "image": "../cardpic/cat.png",
+        "name": "cat"
+
+    },
+    {
+        "image": "../cardpic/jellyfish.png",
+        "name": "jellyfish"
+
+    },
+    {
+        "image": "../cardpic/parrot.png",
+        "name": "parrot"
+
+    },
+    {
+        "image": "../cardpic/flowers.png",
+        "name": "flowers"
+
+    },
+    {
+        "image": "../cardpic/squrriel.png",
+        "name": "squrriel"
+
+    },
+    {
+        "image": "../cardpic/mountain.png",
+        "name": "mountain"
+
+    }
+
+
+]
