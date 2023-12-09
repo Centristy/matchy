@@ -1,44 +1,44 @@
 [
     {
-        "image": "../cardpic/buger.png",
+        "image": "https://i.ibb.co/Z6rGkpy/burger.png",
         "name": "burger"
 
     },
     {
-        "image": "../cardpic/fox.png",
+        "image": "https://i.ibb.co/3fz8vXr/fox.png",
         "name": "fox"
 
     },
     {
-        "image": "../cardpic/cat.png",
+        "image": "https://i.ibb.co/5kY1XWH/cat.png",
         "name": "cat"
 
     },
     {
-        "image": "../cardpic/jellyfish.png",
+        "image": "https://i.ibb.co/yyJFwdg/jellyfish.png",
         "name": "jellyfish"
 
     },
     {
-        "image": "../cardpic/parrot.png",
+        "image": "https://i.ibb.co/nwWWzmz/parrot.png",
         "name": "parrot"
 
     },
     {
-        "image": "../cardpic/flowers.png",
+        "image": "https://i.ibb.co/crWNb4q/flowers.png",
         "name": "flowers"
 
     },
     {
-        "image": "../cardpic/squrriel.png",
+        "image": "https://i.ibb.co/qJQj9tZ/squrriel.png",
         "name": "squrriel"
 
     },
     {
-        "image": "../cardpic/mountain.png",
+        "image": "https://i.ibb.co/rtz6Ng1/mountain.png",
         "name": "mountain"
 
     }
 
-
+   
 ]

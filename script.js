@@ -1,27 +1,27 @@
 const gameContainer = document.getElementById("game");
 
 let cards = [];
-let score = 0;
 let firstCard, secondCard;
+let lockBoard = false;
+let score = 0;
 
 document.querySelector(".score").textContent = score;
 
 
- fetch("cards.json")
+ fetch("./cards.json")
   .then((res) => res.json())
   .then((data)=> {
     cards = [...data,...data];
     shuffle();
     generateCards();
 
-  })
+  });
   
 
 
 
-function shuffle(array) {
-  let counter = array.length;
-
+function shuffle() {
+  let counter = cards.length;
 
   while (counter > 0) {
    
@@ -31,12 +31,12 @@ function shuffle(array) {
     counter--;
 
    
-    let temp = array[counter];
-    array[counter] = array[index];
-    array[index] = temp;
+    let temp = cards[counter];
+    cards[counter] = cards[index];
+    cards[index] = temp;
   }
 
-  return array;
+  return cards;
 }
 
 let shuffledCards = shuffle(cards);
@@ -48,7 +48,8 @@ function generateCards(){
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
-    card.innerHTML = `<div class="front"> <img class"front-image" src=${card.image}/></div>`;
+    cardElement.innerHTML = `<div class="front"> <img class="front-image" src=${card.image}/></div>
+    <div class = "back"></div>`;
 
     gameContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
@@ -60,7 +61,7 @@ function generateCards(){
 
 function flipCard(){
 
-  if(lockBoard) return;
+  if (lockBoard) return;
   if (this === firstCard) return;
   
   this.classList.add("flipped");
@@ -70,40 +71,40 @@ function flipCard(){
     return;
 
   }
-
-
   secondCard = this;
-  score++;
-  document.querySelector("score").textContent = score;
+  
   lockBoard = true;
   checkForMatch();
 }
 
 function checkForMatch(){
 
-let match = firstCard.dataset.name === secondCard.dataset.name;
+  let ismatch = firstCard.dataset.name === secondCard.dataset.name;
 
-match ? disableCard() : unflipCards();
-
+  ismatch ? disableCard() : unflipCards();
 }
+
+
 
 function disableCard() {
-
-firstCard.removeEventListener("click", flipCard);
-secondCard.removeEventListener("click", flipCard);
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
+  score++;
+  document.querySelector(".score").textContent = score;
+  resetBoard();
 
 }
 
-resetBoard();
+
 
 function unflipCards(){
 
-  setTimeout(()=>{
+  setTimeout(() => {
 
-   firstCard.classList.remove("flipped")
+    firstCard.classList.remove("flipped")
     secondCard.classList.remove("flipped")
     resetBoard();
-  },1500);
+  },1200);
 }
 
 function resetBoard(){
